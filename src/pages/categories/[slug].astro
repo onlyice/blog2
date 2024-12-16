@@ -22,6 +22,15 @@ export async function getStaticPaths() {
     },
     {} as Record<string, Post[]>,
   );
+
+  for (const posts of Object.values(tagMap)) {
+    posts.sort((a, b) => {
+      const dateA = new Date(a.data.date).getTime();
+      const dateB = new Date(b.data.date).getTime();
+      return dateB - dateA;
+    });
+  }
+
   const tags = Array.from(tagSet).sort();
   return Object.entries(tagMap).map(([tag, posts]) => ({
     params: { slug: decodeURI(tag) },
@@ -39,6 +48,6 @@ const { slug, posts, tags } = Astro.props;
 ---
 
 <Layout>
-  <SlugList slugs={tags} activeSlug={slug} generateLink={(slug) => `/tags/${encodeURI(slug)}`} />
+  <SlugList slugs={tags} activeSlug={slug} generateLink={(slug) => `/categories/${encodeURI(slug)}`} />
   <PostListing posts={posts} />
 </Layout>

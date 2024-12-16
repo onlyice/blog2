@@ -25,7 +25,7 @@ const { post } = Astro.props;
 <Layout title={post.data.title} description={post.data.description}>
   <div class="flex flex-col gap-8 md:w-5/6 px-4 py-12 sm:px-8 mx-auto">
     <div class="flex flex-col gap-6 items-center justify-center max-w-screen-sm mx-auto">
-      <h1 id="header" class="text-5xl text-center font-title font-black">{post.data.title}</h1>
+      <h1 id="header" class="text-5xl text-center font-title font-bold">{post.data.title}</h1>
       <div class="flex items-center justify-center gap-2">
         <DateTag date={post.data.date} />
         {post.data.tags?.map((tag) => <Tag tag={tag} />)}
@@ -34,11 +34,18 @@ const { post } = Astro.props;
     </div>
     {
       post.data.cover && (
-        <img src={`${post.data.cover}?w=1200&q=80`} alt="cover" class="w-full max-w-screen-md mx-auto rounded-lg" />
+        <figure>
+          <img src={`${post.data.cover}?w=1200&q=80`} alt="cover" class="w-full max-w-screen-md mx-auto rounded-lg" />
+          {
+            post.data.coverCredit && (
+              <figcaption class="text-xs text-zinc-500 text-center mt-2" set:html={post.data.coverCredit} />
+            )
+          }
+        </figure>
       )
     }
   </div>
-  <div class="relative flex flex-col gap-2 max-w-screen-md mx-auto px-4 sm:px-6 text-base text-zinc-700">
+  <div class="post-content relative flex flex-col gap-2 max-w-screen-md mx-auto px-4 sm:px-6 text-base text-zinc-800 leading-7">
     <PostContent post={post} />
   </div>
 </Layout>
