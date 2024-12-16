@@ -1,5 +1,6 @@
 import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
+import vercel from "@astrojs/vercel";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import { defineConfig } from "astro/config";
@@ -10,10 +11,12 @@ import remarkMath from "remark-math";
 export default defineConfig({
   site: "https://astro-theme-mia.pages.dev",
   trailingSlash: "never",
+
   prefetch: {
     prefetchAll: true,
     defaultStrategy: "viewport",
   },
+
   integrations: [
     mdx({
       syntaxHighlight: "shiki",
@@ -27,5 +30,7 @@ export default defineConfig({
     tailwind(),
     react(),
   ],
+
   output: "static",
+  adapter: vercel(),
 });
