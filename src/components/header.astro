@@ -6,10 +6,10 @@ import Menus from "./menus.astro";
 <header
   class="sticky z-50 top-0 bg-white/80 backdrop-blur-xl transition-all select-none bg-gradient-to-b from-orange-50"
 >
-  <div class="flex flex-row gap-8 items-center justify-between max-w-screen-md mx-auto h-24 px-4 sm:px-6">
+  <div class="flex flex-col md:flex-row gap-4 md:gap-8 items-center justify-between max-w-screen-md mx-auto min-h-16 md:h-24 p-4 md:px-6">
     <a href="/" class="flex flex-row items-center justify-center gap-2">
-      <!--<img src={SITE_LOGO} alt="author avatar" class="w-10 rounded-full aspect-square" />-->
-      <span class="text-orange-600 font-title font-bold">{SITE_TITLE}</span>
+      <!--<img src={SITE_LOGO} alt="author avatar" class="w-8 md:w-10 rounded-full aspect-square" />-->
+      <span class="text-orange-600 font-title font-bold text-lg md:text-xl">{SITE_TITLE}</span>
     </a>
     <Menus />
   </div>

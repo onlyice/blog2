@@ -1,6 +1,6 @@
 export const SITE_FAVICON = "";
 export const SITE_LOGO = "";
-export const SITE_TITLE = "Zhiheng Lin";
+export const SITE_TITLE = "Zhiheng Lin's Blog";
 export const SITE_DESCRIPTION = "just random thoughts and notes";
 
 export const MENUS = [
