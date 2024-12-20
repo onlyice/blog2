@@ -28,4 +28,4 @@ export const MENUS = [
 
 export const FOOTER_CONTENT = "END";
 
-export const GOOGLE_GTAG = "G-XXXXXXXXXX";
+export const GOOGLE_GTAG = "G-Z9B76NBNT6";
