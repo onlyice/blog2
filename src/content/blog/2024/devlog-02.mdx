@@ -1,0 +1,38 @@
+---
+title: Devlog 01 - Supabase 初体验
+description: 简单了解了下它的 Database 和 Auth 能力
+date: 2025-01-08
+tags:
+  - devlog
+cover: https://images.unsplash.com/photo-1529589402286-203183a8259e
+coverCredit: Photo by <a href="https://unsplash.com/@linzengxiao?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">zengxiao lin</a> on <a href="https://unsplash.com/photos/black-ceramic-coffee-mug-on-macbook-pro-fBZsl463vJQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+---
+
+[Supabase](https://supabase.com/) 在推上被奉为独立开发者神器，说是非常好用容易出 demo。我对它做了一些简单的了解。
+
+## Database
+
+[Database](https://supabase.com/docs/guides/database/overview) 是 Supabase 最核心的能力，其他的功能都是围绕它设计的。它提供了 Postgres 数据库以及之上的一系列高级功能，比如：
+
+- 提供了在网页控制台中操作表数据、执行 SQL 的能力
+- 提供了一套 Data API 服务，用户可以用 REST 或 GraphQL 协议来操作数据
+- 提供了一套 client 库，提供了方便的 API 用来调用 Data API
+
+这套设计是为了让开发者无需自己实现后端服务，可以直接使用 Supabase 作为应用服务器，直接写前端或客户端即可。如果你想自己写后端，也可以直连 DB。它即是一个开箱即用的应用服务器，又是一个全功能的 PG 数据库。
+
+## Auth
+
+[Auth](https://supabase.com/docs/guides/auth) 是 Supabase 的第二个核心功能。它提供了非常完善的各种认证流程，除了基础的账号密码登陆，还支持通过邮件链接登陆、手机验证码登陆和近 20 种第三方登陆。
+
+Auth 服务的源码是[开源](https://github.com/supabase/auth)的，fork 自 Netlify 的 [gotrue](https://github.com/netlify/gotrue)。你可以自己搭建，也可以用 Supabase 提供的服务。
+
+Supabase 原先有维护一个 React 库 [Auth UI](https://supabase.com/docs/guides/auth/auth-helpers/auth-ui)，后面没有精力维护了，交给了社区。现在项目并不活跃。
+
+## 批评
+
+网络上也有一些批评的声音，比如这篇 [I cannot _fully_ recommend Supabase (yet)](https://bombillazo.medium.com/why-i-cannot-fully-recommend-supabase-yet-f8e994201804)。主要的问题是：
+
+- Supabase 虽然提供了在本地部署它各组件的能力，方便你开发测试；但是这个本地版本的行为跟在线版本不完全一致，导致测试好的功能发布线上后不太正常
+- CLI 和类型生成功能不太稳定
+- Client 不支持数据库事务
+- 公司更看重推出新功能，而不是把已有问题修好整固；且新功能常常只能适用于很窄的场景，一旦逻辑稍复杂就无法支持
