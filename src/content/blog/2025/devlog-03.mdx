@@ -10,7 +10,7 @@ coverCredit: Photo by <a href="https://unsplash.com/@hansjurgen007?utm_content=c
 实现一个图像分类功能分几步：
 
 1. 找到已经分类好的的图像数据和模型
-2. 使用模型对数据进行训练
+2. 使用数据训练模型
 3. 使用训练结果对新图片做预测
 
 下面会实现这样的功能：给定一张图片，判断它是灰熊（grizzly bear）、黑熊（black bear）还是泰迪熊（teddy bear）。
@@ -57,7 +57,7 @@ from duckduckgo_search import DDGS
 DDGS().images('grizzly bear', max_results=2)
 ```
 
-返回的内容是这样的 JSON：
+返回的内容是这样的：
 
 ```json
 [
@@ -82,7 +82,7 @@ DDGS().images('grizzly bear', max_results=2)
 ]
 ```
 
-我们只关心其中的 `image` 字段，因此可以写一个函数来提取它：
+我们只关心其中的 `image` 字段，因此写一个函数来提取它：
 
 ```python
 def search_images(keywords, max_results=200):
@@ -90,7 +90,7 @@ def search_images(keywords, max_results=200):
     return [img['image'] for img in images]
 ```
 
-得到了图片 URL 后，还需要把它们下载下来。我们将使用的 FastAI 深度学习库，提供了方便的下载函数，比如 `download_images` 来下载图片：
+得到了图片 URL 后，还需要把它们下载下来。FastAI 库提供了方便的函数 `download_images` 来下载图片：
 
 ```python
 from pathlib import Path
@@ -133,9 +133,9 @@ failed_images = verify_images(file_paths)
 failed_images.map(Path.unlink)
 ```
 
-有了图片后，我们可以开始训练模型。
+有了图片后，便可以开始训练模型。
 
-## 使用模型对数据进行训练
+## 使用数据训练模型
 
 在将图片喂给模型做训练之前，仍需要对图片做一些处理。
 
