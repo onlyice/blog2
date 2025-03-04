@@ -1,0 +1,39 @@
+---
+title: Devlog 04 - 深度学习入门之旅
+description: 这次能学会吗？
+date: 2025-01-25
+tags:
+  - devlog
+cover: https://images.unsplash.com/photo-1517842645767-c639042777db
+coverCredit: Photo by <a href="https://unsplash.com/@dtravisphd?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">David Travis</a> on <a href="https://unsplash.com/photos/brown-fountain-pen-on-notebook-5bYxXawHOQg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+---
+LLM 大流行的今天，我作为一个 CRUD 工程师，又想来入门深度学习了。
+
+## Practical Deep Learning for Coders
+
+经过一番探索，找到了一个挺受欢迎的课程：[Practical Deep Learning for Coders](https://course.fast.ai/)。它的特点是边做边学，不像一些教科书中有太多枯燥的理论部分。
+
+这个课程以视频为主，文字内容以 Jupyter Notebook 的形式 [放在 GitHub 上](https://github.com/fastai/course22)。视频中作者也经常会使用他以前写的一本书，[Deep Learning for Coders with Fastai and PyTorch](https://www.amazon.com/Deep-Learning-Coders-fastai-PyTorch/dp/1492045527)，来进行讲解。这本书也有 [Jupyter Notebook 形式的仓库](https://github.com/fastai/fastbook) 可以阅读。
+
+我并不喜欢以视频的形式学习，更喜欢自主阅读文字材料，再辅以 AI 解释其中不理解的部分；因此下面的观点是基于上面提到的两个 Jupyter Notebook 仓库。
+
+我只看了前 3 章。优点在于：
+
+- 可以用代码实现实际的功能
+- 讲解得很细，大部分内容是好理解的
+
+于我而言，学习这套内容的阻力有：
+
+- 它使用了 PyTorch，但不会对其 API 有过多的讲解；需要时常中断下来理清 API 含义
+- 它使用了自己封装的 util 函数（在 `fastai` 库），我时常需要停下来看看它具体实现了什么
+- 有些内容的讲解可能不够深入。比如在讲数字识别时，它使用的训练素材是一些灰度的图片，并将每个图片的像素点转换成了一个 0~1 范围内的浮点数。真实的图片处理会这么简单么？实践中应该怎样用 Tensor 来表达图片？为什么用 0~1 浮点数来表达像素点？这里面的内容并没有做出有意义的解释，需要自己去扩展
+
+但总的来说是可以看的材料。
+
+## PyTorch Tutorial
+
+PyTorch 官方有一套 [入门教程](https://pytorch.org/tutorials/beginner/basics/intro.html)。其中 Transform 之前的章节都比较好理解。到了 [Build the Neural Network](https://pytorch.org/tutorials/beginner/basics/buildmodel_tutorial.html) 开始引入了机器学习的概念，就无法理解了。
+
+## 动手学深度学习
+
+[动手学深度学习](https://zh.d2l.ai/) 是李沐（亚马逊首席科学家）主导，社区共创的一套内容。看起来比较流行。质量如何还需要研究。

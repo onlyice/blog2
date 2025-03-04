@@ -7,7 +7,7 @@ tags:
 cover: https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d
 coverCredit: Photo by <a href="https://unsplash.com/@sorasagano?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Sora Sagano</a> on <a href="https://unsplash.com/photos/canal-between-cherry-blossom-trees-8sOZJ8JF0S8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 ---
-这个周天，我几乎把一整天献给了新下载的休闲游戏：[Cell to Singularity](https://celltosingularity.com/) 和 [All in Hole](https://play.google.com/store/apps/details?id=com.homagames.studio.allinhole&hl=en_SG)。睁开眼后，我几乎所有的时间都盯着手机屏幕。
+这个周天，从睁开眼，我就开始玩新下载的手机游戏：[Cell to Singularity](https://celltosingularity.com/) 和 [All in Hole](https://play.google.com/store/apps/details?id=com.homagames.studio.allinhole&hl=en_SG)，停不下来玩了一整天。
 
 到了晚上，我感到一种很强烈的负罪感：这个周末是娃不在身边的周末，理由好好利用在做正确的事情上。但这也给我带来一些思考。
 
