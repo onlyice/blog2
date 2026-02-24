@@ -1,14 +1,13 @@
 ---
 const props = Astro.props;
-console.log('props', props);
 ---
 
 <div {...props} class="flex flex-col gap-2 text-center items-center">
   <img
-    class="rounded-lg overflow-clip"
+    class="rounded overflow-clip"
     src={props.src.src}
     alt={props.alt ?? ""}
     width={props.src.width}
   />
-  <span class="text-gray-400 font-normal text-sm">{props.alt}</span>
+  <span class="text-tx3 font-normal text-sm">{props.alt}</span>
 </div>

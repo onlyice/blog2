@@ -4,12 +4,11 @@ import Menus from "./menus.astro";
 ---
 
 <header
-  class="sticky z-50 top-0 bg-white/80 backdrop-blur-xl transition-all select-none bg-gradient-to-b from-orange-50"
+  class="sticky z-50 top-0 bg-white/90 backdrop-blur-md border-b border-border transition-all select-none"
 >
-  <div class="flex flex-col md:flex-row gap-4 md:gap-8 items-center justify-between max-w-screen-md mx-auto min-h-16 md:h-24 p-4 md:px-6">
+  <div class="flex flex-row gap-8 items-center justify-between max-w-prose mx-auto h-14 px-4">
     <a href="/" class="flex flex-row items-center justify-center gap-2">
-      <!--<img src={SITE_LOGO} alt="author avatar" class="w-8 md:w-10 rounded-full aspect-square" />-->
-      <span class="text-orange-600 font-title font-bold text-lg md:text-xl">{SITE_TITLE}</span>
+      <span class="font-semibold text-base text-tx1">{SITE_TITLE}</span>
     </a>
     <Menus />
   </div>

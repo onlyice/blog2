@@ -23,29 +23,31 @@ const { post } = Astro.props;
 ---
 
 <Layout title={post.data.title} description={post.data.description}>
-  <div class="flex flex-col gap-8 md:w-5/6 px-4 py-12 sm:px-8 mx-auto">
-    <div class="flex flex-col gap-6 items-center justify-center max-w-screen-sm mx-auto">
-      <h1 id="header" class="md:text-3xl text-2xl text-center font-title font-bold">{post.data.title}</h1>
-      <div class="flex items-center justify-center gap-2">
+  <div class="flex flex-col gap-8 max-w-prose px-4 py-12 mx-auto">
+    <div class="flex flex-col gap-4">
+      <h1 class="text-heading-1">{post.data.title}</h1>
+      <div class="flex items-center gap-2">
         <DateTag date={post.data.date} />
         {post.data.tags?.map((tag) => <Tag tag={tag} />)}
       </div>
-      <p class="text-center text-zinc-500 max-w-[480px]">{post.data.description}</p>
+      {post.data.description && post.data.description !== "-" && (
+        <p class="text-tx2">{post.data.description}</p>
+      )}
     </div>
     {
       post.data.cover && (
         <figure>
-          <img src={`${post.data.cover}?w=1200&q=80`} alt="cover" class="w-full max-w-screen-md mx-auto rounded-lg" />
+          <img src={`${post.data.cover}?w=1200&q=80`} alt="cover" class="w-full rounded" />
           {
             post.data.coverCredit && (
-              <figcaption class="text-xs text-zinc-500 text-center mt-2" set:html={post.data.coverCredit} />
+              <figcaption class="text-xs text-tx3 text-center mt-2" set:html={post.data.coverCredit} />
             )
           }
         </figure>
       )
     }
   </div>
-  <div class="post-content relative flex flex-col gap-4 max-w-screen-md mx-auto px-4 sm:px-6 text-base text-zinc-800 leading-7">
+  <div class="post-content relative flex flex-col gap-2 max-w-prose mx-auto px-4 text-base text-tx1 leading-[1.75]">
     <PostContent post={post} />
   </div>
 </Layout>

@@ -1,7 +1,6 @@
 html,
 body {
-  width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   content-visibility: auto;
   -webkit-font-smoothing: antialiased;
 }
@@ -11,13 +10,26 @@ body {
 }
 
 code {
-  @apply text-sm font-mono text-purple-700 font-medium;
+  @apply text-[0.9em] font-mono text-tx1 bg-bg2 px-1.5 py-0.5 rounded;
 }
 
 pre.astro-code {
-  @apply px-4 py-3 rounded-lg text-xl !bg-zinc-100 leading-6 overflow-x-scroll;
+  @apply px-4 py-3 rounded-lg text-[0.85rem] !bg-[#f6f6f6] leading-6 overflow-x-auto;
+}
+
+pre.astro-code code {
+  @apply bg-transparent p-0 rounded-none text-inherit;
 }
 
 svg.rough-annotation {
   opacity: 70%;
+}
+
+/* MDX wraps ![](img) in <p>; when img renders as <div>, the browser
+   splits the <p> into a whitespace-only <p> before and an empty <p> after. */
+.post-content > p:empty {
+  display: none;
+}
+.post-content > p:not(:has(*)):has(+ div) {
+  display: none;
 }

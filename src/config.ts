@@ -26,6 +26,6 @@ export const MENUS = [
   },
 ];
 
-export const FOOTER_CONTENT = "END";
+export const FOOTER_CONTENT = "© 2026 Zhiheng Lin";
 
 export const GOOGLE_GTAG = "G-Z9B76NBNT6";
